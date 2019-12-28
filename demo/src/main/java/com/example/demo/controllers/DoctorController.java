@@ -32,11 +32,9 @@ public class DoctorController {
 		List<EntityModel<Slot>> slotResources = new ArrayList<EntityModel<Slot>>();
 		
 		for(Slot slot : openSlots) {
-			
 			EntityModel<Slot> entityModel = new EntityModel<>(slot, linkTo(methodOn(SlotController.class).findById(slot.getId())).withSelfRel()
 					.andAffordance(afford(methodOn(SlotController.class).save(slot.getId(), null))))
-			.add(linkTo(methodOn(SlotController.class).save(slot.getId(), null)).withRel("/linkrels/slot/book"));
-					
+			.add(linkTo(methodOn(SlotController.class).save(slot.getId(), null)).withRel("slot/book"));
 			
 			slotResources.add(entityModel);
 		}

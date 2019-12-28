@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import org.springframework.hateoas.server.core.Relation;
+
+@Relation(collectionRelation = "slots")
 public class Slot {
 	private String id;
 
